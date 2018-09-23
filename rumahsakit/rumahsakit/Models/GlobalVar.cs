@@ -7,6 +7,6 @@ namespace rumahsakit.Models
 {
     public static class GlobalVar
     {
-        public static RestClient Domain => new RestClient("");
+        public static RestClient Domain => new RestClient("https://apisentris.com/api/v1/");
     }
 }

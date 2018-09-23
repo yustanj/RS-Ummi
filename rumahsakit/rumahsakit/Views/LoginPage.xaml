@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:rumahsakit.ViewModels"
              x:Class="rumahsakit.Views.LoginPage">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Margin="20">
-            <Entry Placeholder="ID RM"/>
-            <Entry Placeholder="Password" IsPassword="True"/>
-            <Button Text="LOGIN"/>
+            <Entry Placeholder="ID RM" Text="{Binding NIRM }"/>
+            <Entry Placeholder="Password" Text="{Binding Paswword}" IsPassword="True"/>
+            <Button Text="LOGIN" Command="{Binding Login}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
